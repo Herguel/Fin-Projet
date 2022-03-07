@@ -1,0 +1,582 @@
+<!doctype html>
+
+<head>
+  <html lang="en">
+  <link rel="stylesheet" href="CSS/menucss.css">
+  <title>Gestion de Stock Informatique</title>
+</head>
+
+<body>
+  <div class="entete">
+    <nav class="nav_entete">
+      <ul>
+        <li class="deroulant"><a href="#">Sites &ensp;</a>
+          <ul class="sous">
+            <li><a href="#">Société</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Personnels</a></li>
+            <li><a href="#">Quitter</a></li>
+          </ul>
+        </li>
+        <li class="deroulant"><a href="#">Matériels &ensp;</a>
+          <ul class="sous">
+            <li ><a onclick=clic_serv()>Matériels en Service</a></li>
+            <li><a onclick=clic_stock()>Matériels en Stock</a></li>
+            <li><a onclick=clic_endom()>Matériels endommagés</a></li>
+            <li><a onclick=clic_mouv()>Mouvements Matériels</a></li>
+            <li><a onclick=clic_casse()>Matériels en casse</a></li>
+
+
+          </ul>
+        </li>
+        <li class="deroulant"><a href="#">Maintenance &ensp;</a>
+          <ul class="sous">
+            <li><a href="#">Fiche d'intervention</a></li>
+            <li><a href="#">Matériels en réparation</a></li>
+          </ul>
+        </li>
+        <li class="deroulant"><a href="#">Logiciels &ensp;</a>
+          <ul class="sous">
+            <li><a href="#">Licences Windows</a></li>
+            <li><a href="#">Licences Offices</a></li>
+          </ul>
+        </li>
+        <li class="deroulant"><a href="#">Inventaire &ensp;</a>
+          <ul class="sous">
+            <li><a href="#">Saisie Inventaire</a></li>
+            <li><a href="#">Consultation Inventaire</a></li>
+            <li><a href="#">Clôture Inventaire</a></li>
+            <li><a href="#">Matériels non Clôturer</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Fournisseurs</a></li>
+        <li><a href="#">A propos</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <div class="menu1">
+
+    <div class="menuGauche">
+      <div>
+        <button class="menuGauche1" onclick="clic_serv()"> Matériels en Service </button>
+        <button class="menuGauche1" onclick="clic_stock()">  Matériels en Stock</button>
+        <button class="menuGauche1" onclick="clic_endom()"> Matériels endommagé</button>
+        <button class="menuGauche1" onclick="clic_mouv()">Mouvement Matériels</button>
+        <button class="menuGauche1" onclick="clic_casse()"> Matériels en Casse</button>
+      </div>
+
+    </div>
+    <div class="menudroit">
+      <img id="img_principal" style=" width: 100%;height: 100%;" src="img/GPI.png" alt="" />
+      <!---------Afficher liste materiéls en service-->
+      <div id="affiche_mat_serv" style="display: none;">
+        <div>
+          <ul class="liste_matr_serv">
+            <li>Ajouter</li>
+            <li>Modifier</li>
+            <li>Supprimer</li>
+            <li>Imprimer</li>
+            <li>Exporter</li>
+            <li>Actualiser</li>
+          </ul>
+          <div style="display: flex;justify-content:space-around; background: rgb(91, 144, 206);height: 40px;">
+            <h2
+              style="color: rgb(51, 100, 156);text-align: center;padding-top: 7px;">
+              Liste de Matériels en Service</h2>
+            <input style="height:20px;width: 250px; margin-top: 7px;border-radius: 7px;border-color: aliceblue ;" type="text" maxlength="20" placeholder="Rechercher">
+          </div>
+        </div>
+        <table>
+          <tr>
+            <th>N° Série</th>
+            <th>Type</th>
+            <th>Marque</th>
+            <th>Modéle</th>
+            <th>Utilisateur</th>
+            <th>Date_Entrée</th>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </table>
+      </div>
+       <!---------------------------------------------------------------------------------->
+        <!---------Afficher liste materiéls en Stock--------------------------------------->
+        <div id="affiche_mat_stock" style="display: none;">
+          <div>
+            <ul class="liste_matr_serv">
+              <li>Ajouter</li>
+              <li>Modifier</li>
+              <li>Supprimer</li>
+              <li>Imprimer</li>
+              <li>Exporter</li>
+              <li>Actualiser</li>
+            </ul>
+            <div style="display: flex;justify-content:space-around; background: rgb(57, 82, 110);height: 40px;">
+              <h2
+                style="color: rgb(13, 55, 102);text-align: center;padding-top: 7px;">
+                Liste de Matériels en Stock</h2>
+              <input style="height:20px;width: 250px; margin-top: 7px;border-radius: 7px;border-color: aliceblue ;" type="text" maxlength="20" placeholder="Rechercher">
+            </div>
+          </div>
+          <table>
+            <tr>
+              <th>N° Série</th>
+              <th>Type</th>
+              <th>Marque</th>
+              <th>Modéle</th>
+              <th>Utilisateur</th>
+              <th>Date_Entrée</th>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </table>
+        </div>
+         <!--------------------------------------------------------------------------------->
+          <!---------Mouvement Matériels--------------------------------------->
+        <div id="affiche_mat_mouv" style="display: none;">
+          <div>
+            <ul class="liste_matr_serv">
+              <li>Ajouter</li>
+              <li>Modifier</li>
+              <li>Supprimer</li>
+              <li>Imprimer</li>
+              <li>Exporter</li>
+              <li>Actualiser</li>
+            </ul>
+            <div style="display: flex;justify-content:space-around; background: rgb(11, 42, 77);height: 40px;">
+              <h2
+                style="color: rgb(125, 146, 170);text-align: center;padding-top: 7px;">
+                Mouvement Matériels</h2>
+              <input style="height:20px;width:250px; margin-top: 7px;border-radius: 7px;border-color: aliceblue ;" type="text" maxlength="20" placeholder="Rechercher">
+            </div>
+          </div>
+          <table>
+            <tr>
+              <th>N° Série</th>
+              <th>Type</th>
+              <th>Marque</th>
+              <th>Modéle</th>
+              <th>Ancien Utilisateur</th>
+              <th>Nouvel Utilisateur</th>
+              <th>Date Transfère</th>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </table>
+        </div>
+         <!--------------------------------------------------------------------------------->
+           <!---------Mouvement Matériels--------------------------------------->
+        <div id="affiche_mat_casse" style="display: none;">
+          <div>
+            <ul class="liste_matr_serv">
+              <li>Ajouter</li>
+              <li>Modifier</li>
+              <li>Supprimer</li>
+              <li>Imprimer</li>
+              <li>Exporter</li>
+              <li>Actualiser</li>
+            </ul>
+            <div style="display: flex;justify-content:space-around; background: rgb(4, 41, 82);height: 40px;">
+              <h2
+                style="color: rgb(135, 142, 150);text-align: center;padding-top: 7px;">
+                Liste de Matériels En Casse</h2>
+              <input style="height:20px;width:250px; margin-top: 7px;border-radius: 7px;border-color: aliceblue ;" type="text" maxlength="20" placeholder="Rechercher">
+            </div>
+          </div>
+          <table>
+            <tr>
+              <th>N° Série</th>
+              <th>Type</th>
+              <th>Marque</th>
+              <th>Modéle</th>
+              <th>Utilisateur</th>
+              <th>Date Entée</th>
+              <th>Date Sortie</th>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </table>
+        </div>
+         <!--------------------------------------------------------------------------------->
+         <!---------Afficher liste materiéls en Stock--------------------------------------->
+        <div id="affiche_mat_endom" style="display: none;">
+          <div>
+            <ul class="liste_matr_serv">
+              <li>Ajouter</li>
+              <li>Modifier</li>
+              <li>Supprimer</li>
+              <li>Imprimer</li>
+              <li>Exporter</li>
+              <li>Actualiser</li>
+            </ul>
+            <div style="display: flex;justify-content:space-around; background: rgb(13, 43, 80);height: 40px;">
+              <h2
+                style="color: rgb(95, 98, 102);text-align: center;padding-top: 7px;">
+                Liste de Matériels Endommagé</h2>
+              <input style="height:20px;width: 250px; margin-top: 7px;border-radius: 7px;border-color: aliceblue ;" type="text" maxlength="20" placeholder="Rechercher">
+            </div>
+          </div>
+          <table>
+            <tr>
+              <th>N° Série</th>
+              <th>Type</th>
+              <th>Marque</th>
+              <th>Modéle</th>
+              <th>Utilisateur</th>
+              <th>Date_Entrée</th>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </table>
+        </div>
+         <!--------------------------------------------------------------------------------->
+    </div>
+  </div>
+
+</body>
+<footer class=" piedpage">
+
+
+  <nav class=partfooter>
+    <div>
+      <h2 style="color: rgb(139, 145, 151);font-size: 35px;padding-top: 15px;"> A.A.F PRODUCTION </h2>
+    </div>
+    <div class="imgs">
+      <img class="image1" src="img/logo.png">
+      <img src="img/aaf.png">
+      <img class="image1" src="img/logo.png">
+    </div>
+    <h3 style="color: rgb(139, 145, 151);padding-top: 30px;"> desgined by HERGUEL Helmi</h3>
+  </nav>
+
+</footer>
+<script>
+  function clic_serv() {
+    document.getElementById('img_principal').style.display = "none";     
+    document.getElementById('affiche_mat_stock').style.display = "none";
+    document.getElementById('affiche_mat_mouv').style.display = "none";
+    document.getElementById('affiche_mat_casse').style.display = "none"; 
+    document.getElementById('affiche_mat_endom').style.display = "none"; 
+    document.getElementById('affiche_mat_serv').style.display = "";
+  
+  }
+  function clic_stock() {
+    document.getElementById('img_principal').style.display = "none"; 
+    document.getElementById('affiche_mat_serv').style.display = "none";
+    document.getElementById('affiche_mat_mouv').style.display = "none";
+    document.getElementById('affiche_mat_casse').style.display = "none"; 
+    document.getElementById('affiche_mat_endom').style.display = "none"; 
+    document.getElementById('affiche_mat_stock').style.display = "";
+  }
+  function clic_mouv() {
+    document.getElementById('img_principal').style.display = "none"; 
+    document.getElementById('affiche_mat_serv').style.display = "none";
+    document.getElementById('affiche_mat_stock').style.display = "none";
+    document.getElementById('affiche_mat_casse').style.display = "none"; 
+    document.getElementById('affiche_mat_endom').style.display = "none"; 
+    document.getElementById('affiche_mat_mouv').style.display = "";    
+  }
+  function clic_casse() {
+    document.getElementById('img_principal').style.display = "none"; 
+    document.getElementById('affiche_mat_serv').style.display = "none";
+    document.getElementById('affiche_mat_stock').style.display = "none";
+    document.getElementById('affiche_mat_mouv').style.display = "none";
+    document.getElementById('affiche_mat_endom').style.display = "none";    
+    document.getElementById('affiche_mat_casse').style.display = "";  
+  } 
+  function clic_endom() {
+    document.getElementById('img_principal').style.display = "none"; 
+    document.getElementById('affiche_mat_serv').style.display = "none";
+    document.getElementById('affiche_mat_stock').style.display = "none";
+    document.getElementById('affiche_mat_mouv').style.display = "none";   
+    document.getElementById('affiche_mat_casse').style.display = "none";
+    document.getElementById('affiche_mat_endom').style.display = "";  
+  } 
+</script>
+<html>

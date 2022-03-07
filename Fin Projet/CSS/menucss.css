@@ -1,0 +1,219 @@
+*{ 
+    margin: 0;
+    padding :0;
+    
+    
+}
+/*------------------------nav Barre-------------------*/
+.entete{
+    height: 60px;
+    background-color: rgb(225, 233, 230);
+
+border-top-left-radius: 5px ;
+border-top-right-radius: 5px;
+border-bottom-left-radius: 5px ;
+border-bottom-right-radius: 5px;
+margin-left: 5px;
+margin-right: 5px;
+overflow: auto;
+
+}
+
+.nav_entete{
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav ul li{
+    float: left;
+    width: 10%;
+    text-align: center;
+    position: relative;
+}
+
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+nav a:hover{
+    color: rgb(87, 140, 255);
+    border-bottom: 2px solid rgb(87, 140, 255);
+   
+}
+
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: white;
+    position:fixed;
+    width: 13%;
+    
+}
+nav > ul li:hover .sous{
+    display: block;
+}
+.sous li{
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: RGBa(200,200,200,0.1);
+}
+.deroulant > a::after{
+    content:" ▼";
+    font-size: 12px;
+}
+.sous-menu>li:hover{
+  background:#39c;
+}
+/*-----------------------------------------------------------*/
+
+/*   recherche-------------------*/
+
+/*   recherche-------------------*/
+.menu1{
+   display: flex;
+   height: 530px;    
+    margin-top: 5px;
+   
+}
+.menuGauche{
+    width: 390px;
+    min-height: 350px;
+    background-color: rgb(225, 233, 230);
+    overflow: auto;
+    margin-left: 5px;   
+    padding-left: 5px;
+    padding-right: 5px;
+    border-top-left-radius: 5px ;
+    border-top-right-radius: 5px;
+    display: flex;
+    flex-wrap:wrap;
+  
+    
+}
+.menuGauche1{
+    background-color: #eef2f7;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    color: gray;
+    font-size: 20x;
+    width: 110px;
+    height: 110px;
+    margin-left: 20px;
+    margin-right: 20x;
+    margin-top: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    border: white;
+    box-shadow: inset 0 0 0em rgb(173, 170, 153), 0 0 1em gray;
+}
+.menuGauche1:hover{
+    background-color: rgb(204, 207, 183);
+    box-shadow: inset 0 0 1em rgb(173, 170, 153), 0 0 2em gray;   
+    color: rgb(36, 31, 28);  
+}
+.menuGauche1:active{
+    box-shadow: inset 0 0 1em rgb(173, 170, 153), 0 0 3em gray;
+}
+.menudroit{
+    width: 100%;
+    min-height: 100%;
+    background-color: hsl(213, 36%, 95%);
+    overflow: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-top-left-radius: 5px ;
+    border-top-right-radius: 5px;
+}
+.liste_matr_serv {
+    width: 100%;
+    background-color: rgb(51, 100, 156);
+    overflow: auto;
+  }
+  
+  .liste_matr_serv li {
+    float: left;
+    width: 10%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: white;
+    list-style-type:none;
+    border-right: #fdfdfd;
+    
+  }
+  
+  .liste_matr_serv li:hover {
+    background-color: rgb(91, 144, 206);
+    pointer-events: painted;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }
+  table {
+    border-collapse:collapse;
+    width:100%;
+    }
+   th, td {
+    border:1px solid black;
+    width:15%;
+    }
+   td {
+    text-align:center;
+    }
+   caption {
+    font-weight:bold
+    }
+/*---------------------pied de page-----------------*/
+.piedpage {background-color:  rgb(45, 124, 181);color: gray;
+    padding-bottom : 5px;
+    padding-top: 5px;
+    padding-left: 30px;
+    border-top: #fdfdfd;
+} 
+.partfooter{ display: flex;
+    justify-content: space-between; 
+    padding-right: 10px;
+}
+    .imgs{
+        justify-content:space-around; 
+        padding-left: 30px;
+    }
+    .image1{
+        margin-top: 12px;
+        margin-left: 20px;
+        margin-right: 20px;
+        transition: 0.5s;
+        justify-content: space-between;
+    }
+    .image1:hover{
+        border-radius: 20px;
+        transform: rotate(360deg);      
+     
+    }
+    @media screen and (min-height: 700px) {
+        .menu1{height: 800px;   
+          
+/*---------------------pied de page-----------------*/
